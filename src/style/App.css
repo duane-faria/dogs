@@ -1,4 +1,45 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: #333;
+  --type-first: Helvetica, Arial, sans-serif;
+  --type-second: 'Spectral', Georgia;
+  font-family: var(--type-first);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0px;
+}
+
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%; /* Só vai expandir até o tamanho da tela, ou do 
+  container que contém ela*/
+}
+
+button,
 input {
   display: block;
-  margin-bottom: 1rem;
+  font-size: 1rem; /* 1rem == 16px*/
+  font-family: var(--type-first);
+  color: #333;
+}
+
+.container {
+  width: 50rem;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
