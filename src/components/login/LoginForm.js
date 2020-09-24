@@ -5,21 +5,13 @@ import Input from '../forms/Input';
 import useForm from '../../Hooks/useForm';
 import { TOKEN_POST, USER_GET } from '../../api';
 import TokenPost from '../../services/endpoints/TokenPost';
+import { UserContext } from '../../UserContext';
 
 export default function LoginForm() {
   const username = useForm();
   const password = useForm();
 
-  async function getUser(token) {
-    const { url, options } = USER_GET(token);
-    const response = await fetch(url, options);
-    const json = await response.json();
-  }
-
-  React.useEffect(() => {
-    const token = window.localStorage.getItem('token');
-    if (token) getUser();
-  }, []);
+  const { userLogin } = React.useContext(UserContext);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -28,18 +20,7 @@ export default function LoginForm() {
       return;
     }
 
-    const { url, options } = TOKEN_POST({
-      username: username.value,
-      password: password.value,
-    });
-
-    const response = await fetch(url, {
-      method: 'POST',
-      options,
-    });
-
-    const json = await response.json();
-    window.localStorage.setItem('token', json.token);
+    userLogin(username.value, password.value);
   }
 
   return (

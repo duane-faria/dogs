@@ -6,17 +6,20 @@ import Home from './components/Home';
 import Login from './components/login/Login';
 import './style/App.css';
 import Api from './services/Api';
+import { UserStorage } from './UserContext';
 
 function App() {
   return (
     <div className='App'>
       <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route exact path='/' element={<Home />}></Route>
-          <Route exact path='/login/*' element={<Login />}></Route>
-        </Routes>
-        <Footer />
+        <UserStorage>
+          <Header />
+          <Routes>
+            <Route exact path='/' element={<Home />}></Route>
+            <Route exact path='/login/*' element={<Login />}></Route>
+          </Routes>
+          <Footer />
+        </UserStorage>
       </BrowserRouter>
     </div>
   );
