@@ -7,6 +7,8 @@ import Login from './components/login/Login';
 import './style/App.css';
 import Api from './services/Api';
 import { UserStorage } from './UserContext';
+import User from './components/user/User';
+import ProtectedRoute from './components/helper/ProtectedRoute';
 
 function App() {
   return (
@@ -17,6 +19,11 @@ function App() {
           <Routes>
             <Route exact path='/' element={<Home />}></Route>
             <Route exact path='/login/*' element={<Login />}></Route>
+            <ProtectedRoute
+              exact
+              path='/conta/*'
+              element={<User />}
+            ></ProtectedRoute>
           </Routes>
           <Footer />
         </UserStorage>

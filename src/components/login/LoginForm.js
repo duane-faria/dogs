@@ -34,7 +34,7 @@ export default function LoginForm() {
         <Input label='Senha' type='password' name='password' {...password} />
 
         {loading ? (
-          <Button disabled='true'>Carregando</Button>
+          <Button disabled>Carregando</Button>
         ) : (
           <Button>Entrar</Button>
         )}

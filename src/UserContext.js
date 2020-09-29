@@ -26,7 +26,7 @@ export const UserStorage = ({ children }) => {
       if (!tokenRes.ok) throw new Error(`Error: ${tokenRes.statusText}`);
       const { token } = await tokenRes.json();
       localStorage.setItem('token', token);
-      getUser(token);
+      await getUser(token);
       navigate('/conta');
     } catch (e) {
       setError(e.message);
@@ -61,6 +61,8 @@ export const UserStorage = ({ children }) => {
         } finally {
           setLoading(false);
         }
+      } else {
+        setLogin(false);
       }
     }
     autoLogin();

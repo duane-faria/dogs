@@ -19,8 +19,8 @@ export default function Header() {
             Login / criar login
           </Link>
         ) : (
-          <div style={{ display: 'flex' }}>
-            <span>{user.data.username}</span>
+          <div style={{ display: 'flex' }} className={styles.login}>
+            <Link to='/conta'>{user.data.username}</Link>
             <button onClick={user.userLogout}>sair</button>
           </div>
         )}
