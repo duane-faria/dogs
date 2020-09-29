@@ -14,9 +14,16 @@ export default function Header() {
         <Link to='/' arial-label='Dogs - home' className={styles.logo}>
           <Dogs />
         </Link>
-        <Link to='/login' className={styles.login}>
-          Login / criar login
-        </Link>
+        {!user.login ? (
+          <Link to='/login' className={styles.login}>
+            Login / criar login
+          </Link>
+        ) : (
+          <div style={{ display: 'flex' }}>
+            <span>{user.data.username}</span>
+            <button onClick={user.userLogout}>sair</button>
+          </div>
+        )}
       </nav>
     </div>
   );
