@@ -7,7 +7,6 @@ import { UserContext } from '../UserContext';
 
 export default function Header() {
   const user = React.useContext(UserContext);
-  console.log(user);
   return (
     <div className={styles.header}>
       <nav className={`${styles.nav} container`}>
@@ -21,7 +20,6 @@ export default function Header() {
         ) : (
           <div style={{ display: 'flex' }} className={styles.login}>
             <Link to='/conta'>{user.data.username}</Link>
-            <button onClick={user.userLogout}>sair</button>
           </div>
         )}
       </nav>
