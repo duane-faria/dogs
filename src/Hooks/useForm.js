@@ -3,7 +3,11 @@ import React from 'react';
 const types = {
   email: {
     regex: /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/,
-    message: 'Insira um e-mail válido',
+    message: 'Insira um e-mail válido.',
+  },
+  number: {
+    regex: /^\d+$/,
+    message: 'Utilize apenas números.',
   },
 };
 

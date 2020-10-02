@@ -15,7 +15,6 @@ export default function TokenPost() {
       body: JSON.stringify({ username, password }),
     })
       .then((res) => {
-        console.log(res);
         return res.json();
       })
       .then((js) => setToken(js.token));

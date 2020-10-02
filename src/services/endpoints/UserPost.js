@@ -15,7 +15,6 @@ export default function UserPost() {
       body: JSON.stringify({ username, email, password }),
     })
       .then((res) => {
-        console.log(res);
         return res.json();
       })
       .then((js) => console.log(js));

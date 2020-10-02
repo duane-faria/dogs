@@ -25,8 +25,6 @@ export default function LoginCreate() {
 
     const { response } = await request(url, options);
     if (response && response.ok) userLogin(username.value, password.value);
-
-    console.log(response);
   }
 
   return (

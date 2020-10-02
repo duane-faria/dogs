@@ -25,7 +25,6 @@ export default function PhotoPost() {
       body: formData,
     })
       .then((res) => {
-        console.log(res);
         return res.json();
       })
       .then((js) => console.log(js));
