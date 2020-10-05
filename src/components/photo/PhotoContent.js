@@ -14,9 +14,9 @@ function PhotoContent({ data }) {
       </div>
       <div className={styles.details}>
         <div>
-          <p>
+          <p className={styles.author}>
             <Link to={`/perfil/${photo.author}`}>@${photo.author}</Link>
-            <span className={styles.visualizacoes}>{photo.acessos}</span>
+            <span className={styles.visualizations}>{photo.acessos}</span>
           </p>
           <h1 className='title'>
             <Link to={`/foto/${photo.id}`}>{photo.title}</Link>
@@ -29,7 +29,7 @@ function PhotoContent({ data }) {
           </ul>
         </div>
       </div>
-      <PhotoComments id={photo.id} comments={comments}/>
+      <PhotoComments id={photo.id} comments={comments} />
     </div>
   );
 }
