@@ -13,15 +13,15 @@ export default function Header() {
         <Link to='/' arial-label='Dogs - home' className={styles.logo}>
           <Dogs />
         </Link>
-        {!user.login ? (
+        {user.login === false ? (
           <Link to='/login' className={styles.login}>
             Login / criar login
           </Link>
-        ) : (
+        ) : user.login === true ? (
           <div style={{ display: 'flex' }} className={styles.login}>
             <Link to='/conta'>{user.data.username}</Link>
           </div>
-        )}
+        ) : null}
       </nav>
     </div>
   );
