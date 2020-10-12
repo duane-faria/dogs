@@ -19,18 +19,24 @@ function App() {
       <BrowserRouter>
         <UserStorage>
           <Header />
-          <Routes>
-            <Route exact path='/' element={<Home />}></Route>
-            <Route exact path='/login/*' element={<Login />}></Route>
-            <ProtectedRoute
-              exact
-              path='/conta/*'
-              element={<User />}
-            ></ProtectedRoute>
-            <Route exact path='/foto/:id' element={<Photo />}></Route>
-            <Route exact path='/perfil/:user' element={<UserProfile />}></Route>
-            <Route path='*' element={<NotFound />}></Route>
-          </Routes>
+          <main className="appBody">
+            <Routes>
+              <Route exact path='/' element={<Home />}></Route>
+              <Route exact path='/login/*' element={<Login />}></Route>
+              <ProtectedRoute
+                exact
+                path='/conta/*'
+                element={<User />}
+              ></ProtectedRoute>
+              <Route exact path='/foto/:id' element={<Photo />}></Route>
+              <Route
+                exact
+                path='/perfil/:user'
+                element={<UserProfile />}
+              ></Route>
+              <Route path='*' element={<NotFound />}></Route>
+            </Routes>
+          </main>
           <Footer />
         </UserStorage>
       </BrowserRouter>
