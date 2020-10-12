@@ -3,6 +3,7 @@ import FeedModal from './FeedModal';
 import FeedPhotos from './FeedPhotos';
 import { UserContext } from '../../UserContext';
 import PropTypes from 'prop-types';
+import Head from '../helper/Head';
 
 const Feed = ({ user }) => {
   const [modalPhoto, setModalPhoto] = React.useState(null);
@@ -37,6 +38,7 @@ const Feed = ({ user }) => {
 
   return (
     <div>
+      {user != 0 && <Head title='Uploads' />}
       {modalPhoto && (
         <FeedModal photo={modalPhoto} setModalPhoto={setModalPhoto} />
       )}
