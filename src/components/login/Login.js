@@ -5,6 +5,7 @@ import LoginCreate from './LoginCreate';
 import LoginPasswordLost from './LoginPasswordLost';
 import LoginPasswordReset from './LoginPasswordReset';
 import styles from './Login.module.css';
+import NotFound from '../NotFound';
 
 export default function Login() {
   return (
@@ -15,6 +16,7 @@ export default function Login() {
           <Route path='criar' element={<LoginCreate />} />
           <Route path='perdeu' element={<LoginPasswordLost />} />
           <Route path='resetar' element={<LoginPasswordReset />} />
+          <Route path='*' element={<NotFound />}></Route>
         </Routes>
       </div>
     </section>
