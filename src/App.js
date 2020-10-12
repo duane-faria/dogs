@@ -9,6 +9,7 @@ import Api from './services/Api';
 import { UserStorage } from './UserContext';
 import User from './components/user/User';
 import ProtectedRoute from './components/helper/ProtectedRoute';
+import Photo from './components/photo/Photo';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
               path='/conta/*'
               element={<User />}
             ></ProtectedRoute>
+            <Route exact path='/foto/:id' element={<Photo />}></Route>
           </Routes>
           <Footer />
         </UserStorage>
