@@ -40,7 +40,7 @@ export default function LoginForm() {
         ) : (
           <Button>Entrar</Button>
         )}
-        {error && <Error error={error} />}
+        {error && <Error error={error && 'Dados incorretos.'} />}
       </form>
       <Link className={styles.lost__password} to='/login/perdeu'>
         Perdeu a Senha?

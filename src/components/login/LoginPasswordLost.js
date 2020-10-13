@@ -22,7 +22,7 @@ export default function LoginPasswordLost() {
   }
 
   return (
-    <div>
+    <div style={{ marginTop: '20vh' }}>
       <h1 className='title'>Perdeu a senha?</h1>
       {data ? (
         <p style={{ color: '#4c1' }}>E-mail enviado.</p>
